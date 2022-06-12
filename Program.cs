@@ -17,9 +17,6 @@ namespace rngGame
             {
                 RollNum();
             }
-        
-            // Wait before closing
-            Console.ReadKey();
         }
 
         public static void RollNum()
