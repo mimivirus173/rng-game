@@ -33,10 +33,11 @@ namespace rngGame
             {
                 // Prompt the user
                 Console.Write("Write a number between 1 and 99: ");
+                System.ReadOnlySpan<char> input = Console.ReadLine();
                 number = Convert.ToInt32(Console.ReadLine());
 
                 // Check if inputted number is valid
-                if (number < 100 && number > 0) {
+                if (number < 100 && number > 0 && int.TryParse(input, out number)) {
                     int roll = numGen.Next(1, 100);
 
                     if (roll > number) {
@@ -51,7 +52,7 @@ namespace rngGame
                         // Loss
                         Console.WriteLine("You lose!");
                         points = 0;
-                        
+
                         Console.Clear();
                         break;
                     }
