@@ -37,17 +37,22 @@ namespace rngGame
 
                 // Check if inputted number is valid
                 if (number < 100 && number > 0) {
-                    Console.WriteLine("You chose: " + number);
-
                     int roll = numGen.Next(1, 100);
 
                     if (roll > number) {
+                        Console.WriteLine("You win!");
+
+                        // Gain points
                         Console.WriteLine("You gain " + number + " points.");
                         points += number;
+
                         Console.WriteLine("Current points: " + points);
                     } else {
+                        // Loss
                         Console.WriteLine("You lose!");
                         points = 0;
+                        
+                        Console.Clear();
                         break;
                     }
                     
