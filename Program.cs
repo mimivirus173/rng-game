@@ -33,33 +33,36 @@ namespace rngGame
             {
                 // Prompt the user
                 Console.Write("Write a number between 1 and 99: ");
-                System.ReadOnlySpan<char> input = Console.ReadLine();
-                number = Convert.ToInt32(Console.ReadLine());
+                string input = Console.ReadLine();
+                number = Convert.ToInt32(input);
 
                 // Check if inputted number is valid
-                if (number < 100 && number > 0 && int.TryParse(input, out number)) {
-                    int roll = numGen.Next(1, 100);
+                if (int.TryParse(input, out number)) {
+                    if (number < 100 && number > 0) {
+                        int roll = numGen.Next(1, 100);
 
-                    if (roll > number) {
-                        Console.WriteLine("You win!");
+                        if (roll > number) {
+                            Console.WriteLine("You win!");
 
-                        // Gain points
-                        Console.WriteLine("You gain " + number + " points.");
-                        points += number;
+                            // Gain points
+                            Console.WriteLine("You gain " + number + " points.");
+                            points += number;
 
-                        Console.WriteLine("Current points: " + points);
+                            Console.WriteLine("Current points: " + points);
+                        } else {
+                            // Loss
+                            Console.WriteLine("You lose!");
+                            points = 0;
+
+                            Console.Clear();
+                            break;
+                        }                    
                     } else {
-                        // Loss
-                        Console.WriteLine("You lose!");
-                        points = 0;
-
-                        Console.Clear();
-                        break;
-                    }
-                    
+                        Console.WriteLine("Invalid input!");
+                    };
                 } else {
                     Console.WriteLine("Invalid input!");
-                };
+                }
             }
         }
     }
