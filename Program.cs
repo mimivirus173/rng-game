@@ -14,25 +14,28 @@ namespace pointGame
             int number;
 
             // Game
-            Console.Write("Write a number between 1 and 99: ");
-            number = Convert.ToInt32(Console.ReadLine());
-            if (number > 99) {
-                Console.WriteLine("Invalid number!");
-                return;
-            }
-            Console.WriteLine("You chose: " + number);
-            int roll = numGen.Next(1,100);
-            Console.WriteLine("Computer chose: " + roll);
+            while (true)
+            {
+                Console.Write("Write a number between 1 and 99: ");
+                number = Convert.ToInt32(Console.ReadLine());
+                if (number > 99) {
+                    Console.WriteLine("Invalid number!");
+                }
+                Console.WriteLine("You chose: " + number);
+                int roll = numGen.Next(1,100);
+                Console.WriteLine("Computer chose: " + roll);
 
-            if (roll == number) {
-                Console.WriteLine("Computer picked the same number as you!");
-                Console.WriteLine("You lose " + roll + " points.");
-                points -= roll;
-                return;
-            } else {
-            Console.WriteLine("You gain " + number + " points.");
-            points += number;
-            Console.WriteLine("Points: " + points);
+                if (roll == number) {
+                    Console.WriteLine("Computer picked the same number as you!");
+                    Console.WriteLine("You lose " + roll + " points.");
+                    points -= roll;
+                    return;
+                } else {
+                Console.WriteLine("You gain " + number + " points.");
+                points += number;
+                Console.WriteLine("Points: " + points);
+                }
+                break;
             }
         
             // Wait before closing
