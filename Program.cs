@@ -47,13 +47,14 @@ namespace rngGame
                             Console.WriteLine("You gain " + number + " points.", Console.ForegroundColor = ConsoleColor.White);
                             points += number;
                             
-                            Console.WriteLine("Current points: " + points);
+                            Console.WriteLine("Current score: " + points);
                             Console.WriteLine("-------------------------");
                         } else {
                             // Loss
                             Console.Clear();
 
                             Console.WriteLine("You lose!", Console.ForegroundColor = ConsoleColor.DarkRed);
+                            Console.WriteLine("Final score: " + points);
                             Console.WriteLine("-------------------------", Console.ForegroundColor = ConsoleColor.White);
                             points = 0;
                             break;
