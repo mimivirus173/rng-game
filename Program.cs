@@ -47,6 +47,7 @@ namespace rngGame
                         Console.WriteLine("Current points: " + points);
                     } else {
                         Console.WriteLine("You lose!");
+                        points = 0;
                         break;
                     }
                     
