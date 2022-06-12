@@ -14,9 +14,7 @@ namespace pointGame
             int number;
 
             // Game
-            for (int i = 0; i == 0; i++)
-            {
-                Console.Write("Write a number between 1 and 99: ");
+            Console.Write("Write a number between 1 and 99: ");
             number = Convert.ToInt32(Console.ReadLine());
             if (number > 99) {
                 Console.WriteLine("Invalid number!");
@@ -35,7 +33,6 @@ namespace pointGame
             Console.WriteLine("You gain " + number + " points.");
             points += number;
             Console.WriteLine("Points: " + points);
-            }
             }
         
             // Wait before closing
