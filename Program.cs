@@ -41,11 +41,11 @@ namespace rngGame
 
                     int roll = numGen.Next();
 
-                    if (roll < number) {
+                    if (roll < number / 100) {
                         Console.WriteLine("You gain " + number + " points.");
                         points += number;
                         Console.WriteLine("Current points: " + points);
-                    } else if (roll > number) {
+                    } else {
                         Console.WriteLine("You lose!");
                         break;
                     }
