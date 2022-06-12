@@ -39,7 +39,7 @@ namespace rngGame
                 if (number < 100 && number > 0) {
                     Console.WriteLine("You chose: " + number);
 
-                    int roll = numGen.Next();
+                    double roll = numGen.NextDouble();
 
                     if (roll > number / 100) {
                         Console.WriteLine("You gain " + number + " points.");
