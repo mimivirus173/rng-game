@@ -1,45 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace pointGame
+namespace rngGame
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
+        {   
+            // Console editing
+            Console.Title = "RNG Game";
+
+            // Main
+            while (true)
+            {
+                RollNum();
+            }
+        
+            // Wait before closing
+            Console.ReadKey();
+        }
+
+        public static void RollNum()
         {
+            // Random number generator
             Random numGen = new Random();
             
             // Variables
             int points = 0;
             int number;
-
-            // Game
+            
+            // Main
             while (true)
             {
+                // Prompt the user
                 Console.Write("Write a number between 1 and 99: ");
                 number = Convert.ToInt32(Console.ReadLine());
-                if (number > 99) {
-                    Console.WriteLine("Invalid number!");
-                }
-                Console.WriteLine("You chose: " + number);
-                int roll = numGen.Next(1,100);
-                Console.WriteLine("Computer chose: " + roll);
 
-                if (roll == number) {
-                    Console.WriteLine("Computer picked the same number as you!");
-                    Console.WriteLine("You lose " + roll + " points.");
-                    points -= roll;
-                    return;
+                // Check if inputted number is valid
+                if (number < 100 && number > 0) {
+                    Console.WriteLine("You chose: " + number);
+
+                    int roll = numGen.Next(0, 100);
+
+                    if (roll < number) {
+                        Console.WriteLine("You gain " + number + " points.");
+                        points += number;
+                        Console.WriteLine("Current points: " + points);
+                    } else if (roll > number) {
+                        Console.WriteLine("You lose!");
+                        break;
+                    }
+                    
                 } else {
-                Console.WriteLine("You gain " + number + " points.");
-                points += number;
-                Console.WriteLine("Points: " + points);
-                }
-                break;
+                    Console.WriteLine("Invalid input!");
+                };
             }
-        
-            // Wait before closing
-            Console.ReadKey();
         }
     }
 }
