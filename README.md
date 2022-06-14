@@ -2,4 +2,9 @@
  inspired by TheEgglet's RNG Score Game
  
  how to play:
- you enter in a number and you have that number percent of losing the game, but if you don't lose you gain that number amount in points
+ 
+ enter in a number
+ 
+ after entering that number you have a that number% of losing the game
+ 
+ if you don't lose you gain that number of points
