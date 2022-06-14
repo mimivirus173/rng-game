@@ -2,7 +2,7 @@
  inspired by TheEgglet's RNG Score Game
  
  
- **how to play:
+ **how to play:**
  
  enter in a number
  
