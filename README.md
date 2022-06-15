@@ -1,4 +1,6 @@
 # rng-game
+ my first actual c# project
+ 
  inspired by TheEgglet's RNG Score Game
  
  
